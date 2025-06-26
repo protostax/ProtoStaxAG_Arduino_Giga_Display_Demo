@@ -113,7 +113,7 @@ void setup() {
     while (1);
   }
 
-  if (imu.begin() == 1) {
+  if (!imu.begin()) {
     Serial.println("Failed to initialize imu!");
     while (1);
   }

@@ -14,15 +14,30 @@ None
 
 ## Installing
 
+Arduino Mbed OS Giga Boards - version 4.3.1
+
 The demos use the following libraries:
 
-* LVGL (verion 9.1.0)
+* LVGL (verion 9.3.0)
 * PDM (built-in library)
-* Arduino_BMI270_BMM150 (version 1.2.0)
+* Arduino_BMI270_BMM150 (version 1.2.1)
 * Arduino_GigaDisplay (version 1.0.2)
 
 You can use the Arduino Library Manager to install the necessary libraries if not already installed
 Arduino IDE->Sketch->Include LIbrary->Manage Libraries 
+
+```
+Note that with version 4.1.5, LVGL had to be version 9.1.0 for the example to work correctly. Otherwise the display 
+was inverted and the IMU and MIC graphs were duplicated. 
+
+Also, note that if you're using Arduino_BMI270_BMM150 version 1.2.0, the condition for checking 
+
+if (!imu.begin()) {
+
+should be changed to 
+
+if (imu.begin() == 1) {
+```
 
 Get the source code
 ```
